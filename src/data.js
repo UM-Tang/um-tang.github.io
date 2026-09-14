@@ -30,7 +30,7 @@ export const projects = [
     date: "May 2026 – Present",
     status: "Preprint · Under review at AAAI 2027",
     highlights: [
-      "Designed an intervention gate that compares LLM-generated scoring programs with a numerical optimizer's reference choice; gate ablations reduced mean normalized regret by 2.9%–7.8% across three tasks.",
+      "Designed an intervention gate that compares candidates from LLM-generated scoring programs with a numerical optimizer's reference choice; gate ablations reduced mean normalized regret by 2.9%–7.8% across three tasks.",
       "Developed offline evaluation across eight reaction-optimization tasks, where CARE achieved the lowest mean normalized regret among evaluated methods with five initial observations and ten adaptive experiment selections per campaign.",
     ],
     links: [
@@ -67,7 +67,7 @@ export const projects = [
     advisor: "Supervised by Prof. Fai Wong",
     date: "Feb 2025 – Present",
     highlights: [
-      "Built a workflow combining SAM-guided segmentation, occlusion detection, hidden-content recovery, OCR, and background reconstruction to separate design elements and rebuild editable text.",
+      "Built a workflow combining agent-guided segmentation with SAM, occlusion detection, hidden-content recovery, OCR, and background reconstruction to separate design elements and rebuild editable text.",
       "Implemented a ReAct agent for iterative layout refinement and SVG assembly; selected 200 LICA examples for text-to-design evaluation, with instruction-adherence and visual-aesthetics assessment in progress.",
     ],
   },
