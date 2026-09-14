@@ -22,7 +22,7 @@ const withLogo = items.some((e) => e.logo);
 <div class:list={["entries", withLogo && "has-logo"]}>
   {
     items.map((e) => (
-      <div class="entry">
+      <article class="entry">
         {withLogo && (
           <span class="entry-logo">
             {e.logo && (
@@ -52,6 +52,13 @@ const withLogo = items.some((e) => e.logo);
               saying who supervised it. */}
           {e.desc && <p class="entry-desc">{e.desc}</p>}
           {e.role && <p class="entry-role muted">{e.role}</p>}
+          {e.advisor && <p class="entry-role muted">{e.advisor}</p>}
+          {e.status && <p class="entry-status">{e.status}</p>}
+          {e.highlights?.length > 0 && (
+            <ul class="entry-highlights">
+              {e.highlights.map((point) => <li>{point}</li>)}
+            </ul>
+          )}
           {/* The same outlined buttons the publication list uses, so a project
               with code and docs reads like a paper with a PDF and a repo. */}
           {e.links?.length > 0 && (
@@ -70,7 +77,7 @@ const withLogo = items.some((e) => e.logo);
           )}
         </div>
         <span class="entry-date muted-2">{e.date}</span>
-      </div>
+      </article>
     ))
   }
 </div>

@@ -14,7 +14,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.2.2"
+    "astro": "^7.3.2"
   },
   "devDependencies": {
     "oxlint": "^1.75.0"

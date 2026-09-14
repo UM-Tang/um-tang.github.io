@@ -522,3 +522,18 @@ footer {
     grid-column: 1;
   }
 }
+
+/* Project summaries extend the template's editorial entry layout. */
+main { min-width: 0; }
+#projects .entries { gap: 36px; }
+#projects .entry { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+#projects .entry-date { grid-row: 1; }
+#projects .entry-org { font-size: 19px; line-height: 1.45; }
+.entry-highlights { margin: 12px 0 0; padding-left: 20px; font-size: 16px; line-height: 1.65; }
+.entry-highlights li + li { margin-top: 7px; }
+.entry-status { margin: 7px 0 0; color: var(--color-link); font-size: 14px; }
+.entry-desc { font-size: 16px; }
+.skills-line { margin: 0; }
+@media (max-width: 760px) {
+  #projects .entry > div, #projects .entry-date { grid-column: 1; }
+}

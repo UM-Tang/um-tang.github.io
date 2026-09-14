@@ -6,7 +6,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <aside>
-  <div class="avatar-wrap">
+  {profile.photo && <div class="avatar-wrap">
     <Image
       class="avatar"
       src={profile.photo}
@@ -16,7 +16,7 @@ import ThemeToggle from "./ThemeToggle.astro";
       loading="eager"
       fetchpriority="high"
     />
-  </div>
+  </div>}
   <div>
     <h2 class="side-name">{profile.nameEn}</h2>
     <p class="side-role muted">

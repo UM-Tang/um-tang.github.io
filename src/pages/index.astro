@@ -19,6 +19,8 @@ import {
   projects,
   awards,
   teaching,
+  leadership,
+  skills,
   lastUpdated,
 } from "../data.js";
 
@@ -95,6 +97,14 @@ const jsonLd = {
       }
 
       {
+        projects.length > 0 && (
+          <Section id="projects" title="Selected Projects">
+            <EntryList items={projects} />
+          </Section>
+        )
+      }
+
+      {
         news.length > 0 && (
           <Section id="news" title="News">
             <NewsList items={news} />
@@ -143,14 +153,6 @@ const jsonLd = {
       }
 
       {
-        projects.length > 0 && (
-          <Section id="projects" title="Projects">
-            <EntryList items={projects} />
-          </Section>
-        )
-      }
-
-      {
         awards.length > 0 && (
           <Section id="awards" title="Awards & Grants">
             <EntryList items={awards} />
@@ -166,9 +168,20 @@ const jsonLd = {
         )
       }
 
+      {leadership.length > 0 && (
+        <Section id="leadership" title="Leadership">
+          <EntryList items={leadership} />
+        </Section>
+      )}
+      {skills.length > 0 && (
+        <Section id="skills" title="Skills">
+          <p class="skills-line">{skills.join(" · ")}</p>
+        </Section>
+      )}
+
       {site.demoNotice && <TemplateCta repo={site.repo} />}
 
-      <footer>Last updated {lastUpdated}</footer>
+      <footer>Last updated {lastUpdated} · Built with <a href="https://github.com/siruizou2005/academic-homepage">academic-homepage</a></footer>
     </main>
   </div>
 </Base>
