@@ -25,6 +25,19 @@ import {
 } from "../data.js";
 
 const title = [profile.nameEn, profile.nameCn].filter(Boolean).join(" ");
+const navigation = [
+  { id: "about", label: "About", items: about },
+  { id: "projects", label: "Projects", items: projects },
+  { id: "news", label: "News", items: news },
+  { id: "education", label: "Education", items: education },
+  { id: "publications", label: "Publications", items: publications },
+  { id: "working-papers", label: "Working Papers", items: workingPapers },
+  { id: "experience", label: "Research", items: experience },
+  { id: "awards", label: "Awards", items: awards },
+  { id: "teaching", label: "Teaching", items: teaching },
+  { id: "leadership", label: "Leadership", items: leadership },
+  { id: "skills", label: "Skills", items: skills },
+].filter(({ items }) => items.length > 0);
 
 // Structured data, assembled from the same content the page renders — nothing
 // to keep in sync by hand. Institutions you list an `url` for in `education`
@@ -72,10 +85,19 @@ const jsonLd = {
   {/* Full-bleed masthead: the rule spans the viewport while the name inside
       lines up with the content below. */}
   <header class="site-header">
-    <h1>
-      {profile.nameEn}
-      {profile.nameCn && <span class="cn">{profile.nameCn}</span>}
-    </h1>
+    <div class="header-inner">
+      <h1>
+        {profile.nameEn}
+        {profile.nameCn && <span class="cn">{profile.nameCn}</span>}
+      </h1>
+      <nav class="section-nav" aria-label="Section navigation">
+        <ul>
+          {navigation.map(({ id, label }) => (
+            <li><a href={`#${id}`}>{label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <div class="page">
@@ -185,3 +207,18 @@ const jsonLd = {
     </main>
   </div>
 </Base>
+
+<script>
+  // Anchor destinations remain visible when the header wraps or text is enlarged.
+  const header = document.querySelector<HTMLElement>(".site-header");
+  if (header) {
+    const measureHeader = () => {
+      document.documentElement.style.setProperty(
+        "--header-height",
+        `${header.getBoundingClientRect().height}px`,
+      );
+    };
+    measureHeader();
+    new ResizeObserver(measureHeader).observe(header);
+  }
+</script>

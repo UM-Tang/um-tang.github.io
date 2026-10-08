@@ -108,15 +108,59 @@ a:hover {
    inside uses the same max-width and padding as .page, so the name lines up
    with the text below. */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-bg);
   border-bottom: 1px solid var(--color-divider);
 }
-.site-header h1 {
+.header-inner {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: 30px var(--gutter);
+  padding: 24px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 32px;
+}
+.site-header h1 {
+  margin: 0;
+  flex-shrink: 0;
   font-size: 38px;
   line-height: 1.15;
   letter-spacing: -0.015em;
+}
+.section-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.section-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid var(--color-divider);
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.section-nav a:hover,
+.section-nav a:focus-visible {
+  background: var(--color-surface);
+  border-color: var(--color-link);
+}
+section[id] {
+  scroll-margin-top: calc(var(--header-height, 7rem) + 24px);
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }
 .site-header .cn {
   font-family: var(--font-cjk);
@@ -481,10 +525,14 @@ footer {
     font-size: 16px;
     line-height: 1.75;
   }
-  .site-header h1 {
-    padding: 22px var(--gutter);
-    font-size: 30px;
+  .header-inner {
+    padding: 18px var(--gutter);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
   }
+  .site-header h1 { font-size: 30px; }
+  .section-nav ul { justify-content: flex-start; }
   .page {
     grid-template-columns: 1fr;
     gap: 40px;

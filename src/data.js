@@ -16,8 +16,9 @@ export const profile = {
 };
 
 export const about = [
-  `I am a Computer Science undergraduate at the <a href="https://www.um.edu.mo/">University of Macau</a>. My research interests center on <strong>LLM-based agents</strong>, including self-referential and self-evolving frameworks, and reinforcement learning for agentic tasks.`,
-  `I am particularly interested in <strong>autonomous AI scientists</strong> that learn from real-world feedback, including automated wet-lab experiments. My projects connect language-model reasoning with executable programs, experimental planning, and practical tools for scientific discovery and design.`,
+  `I am a Computer Science undergraduate at the <a href="https://www.um.edu.mo/">University of Macau</a>. I work with Prof. <a href="https://www.fst.um.edu.mo/personal/derek-wong/">Fai Wong</a> at NLP2CT on agent-based graphic design, and my final-year project on protein variant screening is supervised by Prof. <a href="https://mnqu.github.io/">Meng Qu</a>.`,
+  `I am also a visiting student at <a href="https://en.westlake.edu.cn/">Westlake University</a>, where I work with Prof. <a href="https://en.westlake.edu.cn/faculty/haisong-lin.html">Haisong Lin</a> in the Laboratory for Biochips &amp; Biosensors on agent-guided microfluidic automation. For the CARE project, I work under the supervision of Dr. <a href="https://tianyushi.org/">Tianyu Shi</a> and Dr. <a href="https://www.linkedin.com/in/peter-peiyu-zhang/">Peiyu Zhang</a> on budgeted reaction optimization.`,
+  `My research interests center on <strong>LLM-based agents</strong>, including self-referential and self-evolving frameworks, and reinforcement learning for agentic tasks. I am particularly interested in <strong>autonomous AI scientists</strong> that learn from real-world feedback, including automated wet-lab experiments.`,
 ];
 
 // Projects come immediately after About; descriptions reflect the supplied CV.
@@ -108,4 +109,4 @@ export const workingPapers = [];
 export const experience = [];
 export const awards = [];
 export const teaching = [];
-export const lastUpdated = "September 2026";
+export const lastUpdated = "October 2026";
