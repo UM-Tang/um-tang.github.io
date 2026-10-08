@@ -446,13 +446,13 @@ section hr {
   align-items: baseline;
 }
 .entries.has-logo .entry {
-  grid-template-columns: 48px 1fr auto;
+  grid-template-columns: 120px minmax(0, 1fr) auto;
   gap: 20px;
   align-items: center; /* steadier than baseline once a logo is in the row */
 }
 .entry-logo {
-  width: 48px;
-  height: 48px;
+  width: 120px;
+  height: 78px;
   display: block;
 }
 .entry-logo img {
@@ -552,8 +552,12 @@ footer {
      institution name for width. */
   .entry,
   .entries.has-logo .entry {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 100px minmax(0, 1fr);
     gap: 14px;
+  }
+  .entry-logo {
+    width: 100px;
+    height: 72px;
   }
   .entry > div {
     grid-column: 2;
@@ -577,6 +581,10 @@ main { min-width: 0; }
 #projects .entry { grid-template-columns: minmax(0, 1fr); gap: 6px; }
 #projects .entry-date { grid-row: 1; }
 #projects .entry-org { font-size: 19px; line-height: 1.45; }
+.entry-figure { margin: 18px 0 10px; }
+.entry-figure a { display: block; max-width: 684px; padding: 12px; background: #fff; border: 1px solid var(--color-divider); border-radius: 4px; }
+.entry-figure img { display: block; width: 100%; height: auto; }
+.entry-figure figcaption { margin-top: 6px; font-size: 13px; color: var(--color-text); opacity: .7; }
 .entry-highlights { margin: 12px 0 0; padding-left: 20px; font-size: 16px; line-height: 1.65; }
 .entry-highlights li + li { margin-top: 7px; }
 .entry-status { margin: 7px 0 0; color: var(--color-link); font-size: 14px; }

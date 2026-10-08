@@ -1,5 +1,9 @@
 // Personal homepage content. Empty lists hide their sections.
 // The CV is a public copy with personal telephone numbers removed.
+import umLogo from "./assets/logos/um-official.png";
+import westlakeLogo from "./assets/logos/westlake-official.png";
+import careFigure from "./assets/projects/care-framework.svg";
+
 export const CV_URL = "Chao_Tang_CV_Sep2026.pdf";
 
 export const profile = {
@@ -16,8 +20,8 @@ export const profile = {
 };
 
 export const about = [
-  `I am a Computer Science undergraduate at the <a href="https://www.um.edu.mo/">University of Macau</a>. I work with Prof. <a href="https://www.fst.um.edu.mo/personal/derek-wong/">Fai Wong</a> at NLP2CT on agent-based graphic design, and my final-year project on protein variant screening is supervised by Prof. <a href="https://mnqu.github.io/">Meng Qu</a>.`,
-  `I am also a visiting student at <a href="https://en.westlake.edu.cn/">Westlake University</a>, where I work with Prof. <a href="https://en.westlake.edu.cn/faculty/haisong-lin.html">Haisong Lin</a> in the Laboratory for Biochips &amp; Biosensors on agent-guided microfluidic automation. For the CARE project, I work under the supervision of Dr. <a href="https://tianyushi.org/">Tianyu Shi</a> and Dr. <a href="https://www.linkedin.com/in/peter-peiyu-zhang/">Peiyu Zhang</a> on budgeted reaction optimization.`,
+  `I am a Computer Science undergraduate at the <a href="https://www.um.edu.mo/">University of Macau</a>. I work with Prof. <a href="https://www.um.edu.mo/news-and-press-releases/campus-news/detail/58806/">Derek Fai Wong</a> at NLP2CT on agent-based graphic design, and my final-year project on protein variant screening is supervised by Prof. <a href="https://mnqu.github.io/">Meng Qu</a>.`,
+  `I am also a visiting student at <a href="https://en.westlake.edu.cn/">Westlake University</a>, where I work with Prof. <a href="https://en.westlake.edu.cn/faculty/haisong-lin.html">Haisong Lin</a> in the Laboratory for Biochips &amp; Biosensors on agent-guided microfluidic automation. For the CARE project, I work under the supervision of Dr. <a href="https://tianyushi.org/">Tianyu Shi</a> and Dr. Peiyu Zhang of <a href="https://en.xtalpi.com/">XtalPi</a> on budgeted reaction optimization.`,
   `My research interests center on <strong>LLM-based agents</strong>, including self-referential and self-evolving frameworks, and reinforcement learning for agentic tasks. I am particularly interested in <strong>autonomous AI scientists</strong> that learn from real-world feedback, including automated wet-lab experiments.`,
 ];
 
@@ -30,6 +34,10 @@ export const projects = [
     advisor: "Supervised by Dr. Tianyu Shi and Dr. Peiyu Zhang",
     date: "May 2026 – Present",
     status: "Preprint · Under review at AAAI 2027",
+    figure: careFigure,
+    figureHref: "https://arxiv.org/abs/2606.14581",
+    figureAlt: "CARE workflow: a numerical reference and an evolving scoring program propose reaction conditions, then an intervention gate selects the next experiment.",
+    figureCaption: "CARE workflow · Figure 1 from the preprint",
     highlights: [
       "Designed an intervention gate that compares candidates from LLM-generated scoring programs with a numerical optimizer's reference choice; gate ablations reduced mean normalized regret by 2.9%–7.8% across three tasks.",
       "Developed offline evaluation across eight reaction-optimization tasks, where CARE achieved the lowest mean normalized regret among evaluated methods with five initial observations and ten adaptive experiment selections per campaign.",
@@ -65,7 +73,7 @@ export const projects = [
     org: "Agent-Based Graphic Design and Editable SVG Generation",
     desc: "An agent-based design system that turns natural-language briefs and style preferences into SVG layouts with independently editable visual and text elements.",
     role: "Lab Member · NLP2CT, University of Macau",
-    advisor: "Supervised by Prof. Fai Wong",
+    advisor: "Supervised by Prof. Derek Fai Wong",
     date: "Feb 2025 – Present",
     highlights: [
       "Built a workflow combining agent-guided segmentation with SAM, occlusion detection, hidden-content recovery, OCR, and background reconstruction to separate design elements and rebuild editable text.",
@@ -80,7 +88,15 @@ export const education = [
     role: "Bachelor of Science in Computer Science",
     date: "Sep 2023 – Present",
     url: "https://www.um.edu.mo/",
+    logo: umLogo,
     desc: "Relevant coursework: Natural Language Processing; Information Retrieval and Web Search; Linear Algebra I; Probability and Statistics; Discrete Structures; Cloud Computing and Big Data Systems.",
+  },
+  {
+    org: "Westlake University",
+    role: "Visiting Student · Laboratory for Biochips & Biosensors",
+    date: "May 2026 – Present",
+    url: "https://en.westlake.edu.cn/",
+    logo: westlakeLogo,
   },
 ];
 

@@ -11,7 +11,8 @@ import { Image } from "astro:assets";
 //   desc   one or two sentences on what it is
 //   role   your role, advisor, or anything secondary
 //   date   right-hand column; keep the format consistent across sections
-//   logo   imported image, shown at 48px
+//   logo   imported institutional image
+//   figure imported project illustration, linked through figureHref
 //   url    makes `org` a link
 //   links  a row of outlined buttons — Code, Website, Docs, Slides, whatever
 //          the entry has — in the same style the publication list uses
@@ -29,8 +30,8 @@ const withLogo = items.some((e) => e.logo);
               <Image
                 src={e.logo}
                 alt=""
-                widths={[48, 96, 144]}
-                sizes="48px"
+                widths={[120, 240]}
+                sizes="120px"
                 loading="lazy"
               />
             )}
@@ -54,6 +55,14 @@ const withLogo = items.some((e) => e.logo);
           {e.role && <p class="entry-role muted">{e.role}</p>}
           {e.advisor && <p class="entry-role muted">{e.advisor}</p>}
           {e.status && <p class="entry-status">{e.status}</p>}
+          {e.figure && (
+            <figure class="entry-figure">
+              <a href={e.figureHref} target="_blank" rel="noopener noreferrer" aria-label={`View ${e.org} paper`}>
+                <Image src={e.figure} alt={e.figureAlt} loading="lazy" />
+              </a>
+              <figcaption>{e.figureCaption}</figcaption>
+            </figure>
+          )}
           {e.highlights?.length > 0 && (
             <ul class="entry-highlights">
               {e.highlights.map((point) => <li>{point}</li>)}
